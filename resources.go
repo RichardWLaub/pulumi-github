@@ -109,7 +109,23 @@ func Provider() tfbridge.ProviderInfo {
 			// },
 		},
 		PreConfigureCallback: preConfigureCallback,
-		Resources:            map[string]*tfbridge.ResourceInfo{
+		Resources: map[string]*tfbridge.ResourceInfo{
+			"github_branch_protection":       {Tok: makeResource(mainMod, "BranchProtection")},
+			"github_issue_label":             {Tok: makeResource(mainMod, "IssueLabel")},
+			"github_membership":              {Tok: makeResource(mainMod, "Membership")},
+			"github_organiztion_project":     {Tok: makeResource(mainMod, "OrganizationProject")},
+			"github_organization_webhook":    {Tok: makeResource(mainMod, "OrganizationWebhook")},
+			"github_project_column":          {Tok: makeResource(mainMod, "ProjectColumn")},
+			"github_repository":              {Tok: makeResource(mainMod, "Repository")},
+			"github_repository_collaborator": {Tok: makeResource(mainMod, "RepositoryCollaborator")},
+			"github_repository_deploy_key":   {Tok: makeResource(mainMod, "RepositoryDeployKey")},
+			"github_repository_project":      {Tok: makeResource(mainMod, "RepositoryProject")},
+			"github_repository_webhook":      {Tok: makeResource(mainMod, "RepositoryWebhook")},
+			"github_team":                    {Tok: makeResource(mainMod, "Team")},
+			"github_team_membership":         {Tok: makeResource(mainMod, "TeamMembershipTeam")},
+			"github_team_repository":         {Tok: makeResource(mainMod, "TeamRepository")},
+			"github_user_gpg_key":            {Tok: makeResource(mainMod, "UserGpgKey")},
+			"github_user_ssh_key":            {Tok: makeResource(mainMod, "UserSshKey")},
 			// Map each resource in the Terraform provider to a Pulumi type. An example
 			// is below.
 			// "aws_acm_certificate": {
