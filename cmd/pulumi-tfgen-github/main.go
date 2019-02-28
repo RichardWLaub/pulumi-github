@@ -17,8 +17,8 @@ package main
 import (
 	"github.com/pulumi/pulumi-terraform/pkg/tfgen"
 
-	github "github.com/pulumi/pulumi-github"
-	"github.com/pulumi/pulumi-github/pkg/version"
+	github "github.com/RichardWLaub/pulumi-github"
+	"github.com/RichardWLaub/pulumi-github/pkg/version"
 )
 
 func main() {

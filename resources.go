@@ -46,10 +46,10 @@ func makeType(mod string, typ string) tokens.Type {
 // makeDataSource manufactures a standard resource token given a module and resource name.  It
 // automatically uses the main package and names the file by simply lower casing the data source's
 // first character.
-func makeDataSource(mod string, res string) tokens.ModuleMember {
-	fn := string(unicode.ToLower(rune(res[0]))) + res[1:]
-	return makeMember(mod+"/"+fn, res)
-}
+//func makeDataSource(mod string, res string) tokens.ModuleMember {
+//fn := string(unicode.ToLower(rune(res[0]))) + res[1:]
+//return makeMember(mod+"/"+fn, res)
+//}
 
 // makeResource manufactures a standard resource token given a module and resource name.  It
 // automatically uses the main package and names the file by simply lower casing the resource's
@@ -60,18 +60,18 @@ func makeResource(mod string, res string) tokens.Type {
 }
 
 // boolRef returns a reference to the bool argument.
-func boolRef(b bool) *bool {
-	return &b
-}
+//func boolRef(b bool) *bool {
+//return &b
+//}
 
 // stringValue gets a string value from a property map if present, else ""
-func stringValue(vars resource.PropertyMap, prop resource.PropertyKey) string {
-	val, ok := vars[prop]
-	if ok && val.IsString() {
-		return val.StringValue()
-	}
-	return ""
-}
+//func stringValue(vars resource.PropertyMap, prop resource.PropertyKey) string {
+//val, ok := vars[prop]
+//if ok && val.IsString() {
+//return val.StringValue()
+//}
+//return ""
+//}
 
 // preConfigureCallback is called before the providerConfigure function of the underlying provider.
 // It should validate that the provider can be configured, and provide actionable errors in the case
@@ -82,7 +82,7 @@ func preConfigureCallback(vars resource.PropertyMap, c *terraform.ResourceConfig
 }
 
 // managedByPulumi is a default used for some managed resources, in the absence of something more meaningful.
-var managedByPulumi = &tfbridge.DefaultInfo{Value: "Managed by Pulumi"}
+// var managedByPulumi = &tfbridge.DefaultInfo{Value: "Managed by Pulumi"}
 
 // Provider returns additional overlaid schema and metadata associated with the provider..
 func Provider() tfbridge.ProviderInfo {
@@ -97,7 +97,7 @@ func Provider() tfbridge.ProviderInfo {
 		Keywords:    []string{"pulumi", "github"},
 		License:     "Apache-2.0",
 		Homepage:    "https://pulumi.io",
-		Repository:  "https://github.com/pulumi/pulumi-github",
+		Repository:  "https://github.com/RichardWLaub/pulumi-github",
 		Config:      map[string]*tfbridge.SchemaInfo{
 			// Add any required configuration here, or remove the example below if
 			// no additional points are required.
